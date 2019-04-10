@@ -1,32 +1,37 @@
 package schedule;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ScheduleBuilder {
-  String name;
-  private Semester sem1;
-  private Semester sem2;
-  private Semester sem3;
-  private Semester sem4;
-  private Semester sem5;
-  private Semester sem6;
-  private Semester sem7;
-  private Semester sem8;
+    String name;
+    List<Semester> semList;
 
-  public ScheduleBuilder(String name) {
-    this.name = name;
-    sem1 = new Semester(Semesters2022.FA18);
-    sem2 = new Semester(Semesters2022.SP19);
-    sem3 = new Semester(Semesters2022.FA19);
-    sem4 = new Semester(Semesters2022.SP20);
-    sem5 = new Semester(Semesters2022.FA20);
-    sem6 = new Semester(Semesters2022.SP21);
-    sem7 = new Semester(Semesters2022.FA21);
-    sem8 = new Semester(Semesters2022.SP22);
-  }
+    public ScheduleBuilder(String name) {
+        this.name = name;
+        Semester sem1 = new Semester(Semesters2022.FA18);
+        Semester sem2 = new Semester(Semesters2022.SP19);
+        Semester sem3 = new Semester(Semesters2022.FA19);
+        Semester sem4 = new Semester(Semesters2022.SP20);
+        Semester sem5 = new Semester(Semesters2022.FA20);
+        Semester sem6 = new Semester(Semesters2022.SP21);
+        Semester sem7 = new Semester(Semesters2022.FA21);
+        Semester sem8 = new Semester(Semesters2022.SP22);
+        semList = List.of(sem1, sem2, sem3, sem4, sem5, sem6, sem7, sem8);
+    }
 
-  public static void main(String[] args) {
-    ScheduleBuilder sb = new ScheduleBuilder("Francis Indaheng");
-  }
+    /** Help menu listing available actions.*/
+    public void help() {
+        System.out.println("Available functions:\n"
+                + "   addCourse(Semester sem, Course cse) — ");
+    }
+
+    /** Add a course to a specific semester.*/
+    public void addCourse(Semester sem, Course cse) {
+
+    }
+
+
+    public static void main(String[] args) {
+        ScheduleBuilder sb = new ScheduleBuilder("Francis Indaheng");
+    }
 }
