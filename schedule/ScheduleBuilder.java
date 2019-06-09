@@ -57,6 +57,7 @@ public class ScheduleBuilder {
     /** Add a course to a specific semester.*/
     public void addCourse(String s, Department d, String c, String n, int u) {
         Semesters2022 sEnum = stringToSemester(s);
+        // TODO: fix sEnum is a Semester2022, but semester list contains Semester objects
         Semester sem = semesterList.get(semesterList.indexOf(sEnum));
         sem.addCourse(new Course(d, c, n, u));
     }
@@ -64,5 +65,7 @@ public class ScheduleBuilder {
 
     public static void main(String[] args) {
         ScheduleBuilder sb = new ScheduleBuilder("Francis Indaheng");
+        sb.addCourse("fall 2018", Department.COMPSCI, "61A",
+                "The Structure and Interpretation of Compute Programs", 4);
     }
 }
